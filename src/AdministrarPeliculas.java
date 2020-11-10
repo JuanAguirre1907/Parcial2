@@ -16,8 +16,10 @@ public class AdministrarPeliculas {
             String descripción = scanner.nextLine();
             System.out.println("ingrese la puntuación");
             double puntuación = scanner.nextDouble();
+            scanner.nextLine();
 
             peliculas[posicion] = new Pelicula(nombre,género,descripción,puntuación);
+            System.out.println("La pelicula: " + nombre + " ha sido agregada correctamente en la posicion: " + posicion+1);
         } else {
             System.out.println("No hay posiciones disponibles");
         }
@@ -27,7 +29,14 @@ public class AdministrarPeliculas {
         System.out.println("Que posicion desea eliminar?");
         int posición = scanner.nextInt();
 
-        peliculas[posición] = null;
+        if(posición >= 1 && posición <= 10) {
+            if(peliculas[posición - 1] == null){
+                System.out.println("La posicion " + posición + " ya está vacía");
+            }else{
+                peliculas[posición - 1] = null;
+                System.out.println("La pelicula en la posicion " + posición + " ha sido correctamente eliminada");
+            }
+        }
     }
 
     public void modificar(){
@@ -35,9 +44,11 @@ public class AdministrarPeliculas {
     }
 
     public void mostrar(){
-
+        System.out.println("\nLista de peliculas: ");
         for (int i = 0; i < peliculas.length; i++){
-            System.out.println(peliculas[i]);
+            if(peliculas[i] != null) {
+                System.out.println(peliculas[i]);
+            }
     }
 
     }
