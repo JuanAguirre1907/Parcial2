@@ -18,12 +18,16 @@ public class Menú {
 
             switch (opcion) {
                 case 1:
+                    administrarPeliculas.agregar();
                     break;
                 case 2:
+                    administrarPeliculas.eliminar();
                     break;
                 case 3:
+                    administrarPeliculas.modificar();
                     break;
                 case 4:
+                    administrarPeliculas.mostrar();
                     break;
                 case 5:
                     break;

@@ -1,11 +1,17 @@
 public class Pelicula {
 
     private String nombre;
-    private String género;
+    private genero género;
     private String descripción;
     private double puntuación;
+    private double posicion;
 
-    public Pelicula(String nombre, String género, String descripción, double puntuación) {
+    public Pelicula(String nombre, genero género, String descripción, double puntuación,double posicion) {
+        this.nombre = nombre;
+        this.género = género;
+        this.descripción = descripción;
+        this.puntuación = puntuación;
+        this.posicion = posicion;
     }
 
     public String getNombre() {
@@ -16,11 +22,11 @@ public class Pelicula {
         this.nombre = nombre;
     }
 
-    public String getGénero() {
+    public genero getGénero() {
         return género;
     }
 
-    public void setGénero(String género) {
+    public void setGénero(genero género) {
         this.género = género;
     }
 

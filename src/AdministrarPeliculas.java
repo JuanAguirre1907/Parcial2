@@ -10,15 +10,14 @@ public class AdministrarPeliculas {
         if (posicion != -1) {
             System.out.println("ingrese el nombre");
             String nombre = scanner.nextLine();
-            System.out.println("ingrese el genero");
-            String género = scanner.nextLine();
+            genero genero = elegirgenero();
             System.out.println("ingrese la descripción");
             String descripción = scanner.nextLine();
             System.out.println("ingrese la puntuación");
             double puntuación = scanner.nextDouble();
             scanner.nextLine();
 
-            peliculas[posicion] = new Pelicula(nombre,género,descripción,puntuación);
+            peliculas[posicion] = new Pelicula(nombre,genero,descripción,puntuación,posicion+1);
             System.out.println("La pelicula: " + nombre + " ha sido agregada correctamente en la posicion: " + posicion+1);
         } else {
             System.out.println("No hay posiciones disponibles");
@@ -61,5 +60,31 @@ public class AdministrarPeliculas {
             }
         }
         return -1;
+        }
+    private genero elegirgenero(){
+        int opcion = 0;
+        do {
+            System.out.println("elija el genero");
+            System.out.println("1. " + genero.AVENTURA);
+            System.out.println("2. " + genero.COMEDIA);
+            System.out.println("3. " + genero.DRAMA);
+            System.out.println("4. " + genero.TERROR);
+            opcion = scanner.nextInt();
+            scanner.nextLine();
+
+            switch (opcion) {
+                case 1:
+                    return genero.AVENTURA;
+                case 2:
+                    return genero.COMEDIA;
+                case 3:
+                    return genero.DRAMA;
+                case 4:
+                    return genero.TERROR;
+                default:
+                    System.out.println("Esta opcion no es válida");
+                    return null;
+            }
+        }while (true);
         }
     }
