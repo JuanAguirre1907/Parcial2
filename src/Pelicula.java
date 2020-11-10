@@ -1,12 +1,12 @@
 public class Pelicula {
 
     private String nombre;
-    private genero género;
+    private Genero género;
     private String descripción;
     private double puntuación;
     private int posicion;
 
-    public Pelicula(String nombre, genero género, String descripción, double puntuación,int posicion) {
+    public Pelicula(String nombre, Genero género, String descripción, double puntuación, int posicion) {
         this.nombre = nombre;
         this.género = género;
         this.descripción = descripción;
@@ -22,11 +22,11 @@ public class Pelicula {
         return nombre;
     }
 
-    public void setGénero(genero género) {
+    public void setGénero(Genero género) {
         this.género = género;
     }
 
-    public genero getGénero() {
+    public Genero getGénero() {
         return género;
     }
 

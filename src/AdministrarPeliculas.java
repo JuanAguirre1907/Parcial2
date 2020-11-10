@@ -10,7 +10,7 @@ public class AdministrarPeliculas {
         if (posicion != -1) {
             System.out.println("ingrese el nombre");
             String nombre = scanner.nextLine();
-            genero genero = elegirgenero();
+            Genero genero = elegirgenero();
             System.out.println("ingrese la descripción");
             String descripción = scanner.nextLine();
             System.out.println("ingrese la puntuación");
@@ -18,7 +18,7 @@ public class AdministrarPeliculas {
             scanner.nextLine();
 
             peliculas[posicion] = new Pelicula(nombre,genero,descripción,puntuación,posicion+1);
-            System.out.println("La pelicula: " + nombre + " ha sido agregada correctamente en la posicion: " + posicion+1);
+            System.out.println("La pelicula: " + nombre + " ha sido agregada correctamente en la posicion: " + (posicion+1));
         } else {
             System.out.println("No hay posiciones disponibles");
         }
@@ -64,7 +64,7 @@ public class AdministrarPeliculas {
                                 peliculas[posicionModificar - 1].setNombre(nuevoNombre);
                                 break;
                             case 2:
-                                genero genero = elegirgenero();
+                                Genero genero = elegirgenero();
                                 peliculas[posicionModificar - 1].setGénero(genero);
                                 break;
                             case 3:
@@ -109,26 +109,26 @@ public class AdministrarPeliculas {
         }
         return -1;
         }
-    private genero elegirgenero(){
+    private Genero elegirgenero(){
         int opcion = 0;
         do {
             System.out.println("elija el genero");
-            System.out.println("1. " + genero.AVENTURA);
-            System.out.println("2. " + genero.COMEDIA);
-            System.out.println("3. " + genero.DRAMA);
-            System.out.println("4. " + genero.TERROR);
+            System.out.println("1. " + Genero.AVENTURA);
+            System.out.println("2. " + Genero.COMEDIA);
+            System.out.println("3. " + Genero.DRAMA);
+            System.out.println("4. " + Genero.TERROR);
             opcion = scanner.nextInt();
             scanner.nextLine();
 
             switch (opcion) {
                 case 1:
-                    return genero.AVENTURA;
+                    return Genero.AVENTURA;
                 case 2:
-                    return genero.COMEDIA;
+                    return Genero.COMEDIA;
                 case 3:
-                    return genero.DRAMA;
+                    return Genero.DRAMA;
                 case 4:
-                    return genero.TERROR;
+                    return Genero.TERROR;
                 default:
                     System.out.println("Esta opcion no es válida");
                     return null;
