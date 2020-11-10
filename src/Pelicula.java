@@ -14,36 +14,36 @@ public class Pelicula {
         this.posicion = posicion;
     }
 
-    public String getNombre() {
-        return nombre;
-    }
-
     public void setNombre(String nombre) {
         this.nombre = nombre;
     }
 
-    public genero getGénero() {
-        return género;
+    public String getNombre() {
+        return nombre;
     }
 
     public void setGénero(genero género) {
         this.género = género;
     }
 
-    public String getDescripción() {
-        return descripción;
+    public genero getGénero() {
+        return género;
     }
 
     public void setDescripción(String descripción) {
         this.descripción = descripción;
     }
 
-    public double getPuntuación() {
-        return puntuación;
+    public String getDescripción() {
+        return descripción;
     }
-
+    
     public void setPuntuación(double puntuación) {
         this.puntuación = puntuación;
+    }
+
+    public double getPuntuación() {
+        return puntuación;
     }
 
     @Override
