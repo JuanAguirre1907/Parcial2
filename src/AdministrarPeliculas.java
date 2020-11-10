@@ -39,7 +39,55 @@ public class AdministrarPeliculas {
     }
 
     public void modificar(){
+        System.out.println("Ingrese la posicion de la pelicula que quiere modificar");
+        int posicionModificar = scanner.nextInt();
+        if (posicionModificar >= 1 && posicionModificar <= 10){
+            if (peliculas[posicionModificar - 1] == null){
+                System.out.println("La posicion " + posicionModificar + " está vacía");
+            }else{
 
+                    int opcion = 0;
+                    do {
+                        System.out.println("Elija una opción según la información que desea modificar: ");
+                        System.out.println("1. cambiar nombre");
+                        System.out.println("2. cambiar genero");
+                        System.out.println("3. cambiar descripcion");
+                        System.out.println("4. cambiar puntuacion");
+                        System.out.println("5. Salir");
+                        opcion = scanner.nextInt();
+                        scanner.nextLine();
+
+                        switch (opcion){
+                            case 1:
+                                System.out.println("Escriba el nuevo nombre");
+                                String nuevoNombre = scanner.nextLine();
+                                peliculas[posicionModificar - 1].setNombre(nuevoNombre);
+                                break;
+                            case 2:
+                                genero genero = elegirgenero();
+                                peliculas[posicionModificar - 1].setGénero(genero);
+                                break;
+                            case 3:
+                                System.out.println("Ingrese la nueva descripcion");
+                                String nuevaDescripcion = scanner.nextLine();
+                                peliculas[posicionModificar - 1].setDescripción(nuevaDescripcion);
+                                break;
+                            case 4:
+                                System.out.println("Ingrese la nueva puntuacion");
+                                Double nuevaPuntuacion = scanner.nextDouble();
+                                peliculas[posicionModificar - 1].setPuntuación(nuevaPuntuacion);
+                                break;
+                            case 5:
+                                break;
+                            default:
+                                System.out.println("Esta opcion no es válida");
+                        }
+
+                    } while (opcion != 5);
+                }
+        }else{
+            System.out.println("Esta posición no existe");
+        }
     }
 
     public void mostrar(){

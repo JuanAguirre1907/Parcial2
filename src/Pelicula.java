@@ -4,9 +4,9 @@ public class Pelicula {
     private genero género;
     private String descripción;
     private double puntuación;
-    private double posicion;
+    private int posicion;
 
-    public Pelicula(String nombre, genero género, String descripción, double puntuación,double posicion) {
+    public Pelicula(String nombre, genero género, String descripción, double puntuación,int posicion) {
         this.nombre = nombre;
         this.género = género;
         this.descripción = descripción;
